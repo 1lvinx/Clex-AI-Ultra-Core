@@ -69,6 +69,3 @@
 - [x] Release notes prepared
 - [x] README English translation completed
 
----
-
-**Last updated**: 2026-04-02

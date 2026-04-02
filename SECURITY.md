@@ -41,6 +41,4 @@ If you discover a security problem:
 - 每次提交和推送前检查 diff
 - 一旦误提交凭证，立即吊销并轮换
 
----
 
-_Last updated: 2026-04-02_
