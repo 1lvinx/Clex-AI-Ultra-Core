@@ -18,19 +18,19 @@ For Chinese documentation, see [README.zh-CN.md](README.zh-CN.md).
 
 Clex-AI-Ultra Core is a **polyglot engineering core** designed for OpenClaw, providing AI-assisted development capabilities through workflow orchestration, permission control, and agent coordination.
 
-| Capability                 | Description                             |
-| -------------------------- | --------------------------------------- |
-| **Polyglot Engine**        | Python / Node.js / Rust / Go协同       |
-| **Workflow Orchestration** | High-level orchestration & task调度     |
-| **Permission Control**     | Fine-grained access control             |
-| **Agent Coordination**     | Multi-agent collaboration & task分发     |
-| **MCP Integration**        | Model Context Protocol integration      |
+| Capability | Description |
+|------------|-------------|
+| **Polyglot Engine** | Python / Node.js / Rust / Go combined |
+| **Workflow Orchestration** | High-level orchestration & task scheduling |
+| **Permission Control** | Fine-grained access control |
+| **Agent Coordination** | Multi-agent collaboration & task dispatch |
+| **MCP Integration** | Model Context Protocol integration |
 
 ---
 
 ## Directory Structure
 
-```text
+```
 Clex-AI-Ultra-Core/
 ├── README.md
 ├── README.zh-CN.md
@@ -164,12 +164,12 @@ go run runtimes/go/cmd/worker/main.go
 
 ## Capability Groups
 
-| Group | Name                   | Skills                                                       |
-| ----- | ---------------------- | ------------------------------------------------------------ |
-| G1    | Command Processing     | cli-commands, command-classifier, permission-engine, cli-integration |
-| G2    | AI Capability          | ai-code-assistant, code-analysis, test-framework             |
-| G3    | Workflow Orchestration | ai-workflows, task-dispatcher, background-tasks              |
-| G4    | Agent Coordination     | agent-teams, agent-communication                             |
+| Group | Name | Skills |
+|-------|------|--------|
+| G1 | Command Processing | cli-commands, command-classifier, permission-engine, cli-integration |
+| G2 | AI Capability | ai-code-assistant, code-analysis, test-framework |
+| G3 | Workflow Orchestration | ai-workflows, task-dispatcher, background-tasks |
+| G4 | Agent Coordination | agent-teams, agent-communication |
 
 See [`docs/capability-groups.md`](docs/capability-groups.md) for full details.
 

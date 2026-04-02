@@ -1,34 +1,34 @@
 # Clex-AI-Ultra Core
 
-> **-open-source 多语言工程化核心版本，专为 AI-assisted development 设计**
+> **Open Source Polyglot Core Edition for AI-assisted Development**
 
-**状态：** Public Alpha — Python MVP，Node.js CLI skeleton，Rust validator skeleton，Go worker skeleton。
+**Status:** Public Alpha — Python MVP, Node.js CLI skeleton, Rust validator skeleton, Go worker skeleton.
 
-[![MIT 许可证](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](runtimes/python/)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](runtimes/nodejs/)
 [![Rust](https://img.shields.io/badge/Rust-1.70%2B-orange.svg)](runtimes/rust/)
 [![Go](https://img.shields.io/badge/Go-1.21%2B-blue.svg)](runtimes/go/)
 
-English documentation, see [README.md](README.md)。
+English documentation, see [README.md](README.md).
 
 ---
 
-## 核心能力
+## Core Capabilities
 
-Clex-AI-Ultra Core 是一个**多语言工程化核心版本**，为 OpenClaw 提供面向工作流的 AI-assisted development 能力增强。
+Clex-AI-Ultra Core is a **polyglot engineering core** designed for OpenClaw, providing AI-assisted development capabilities through workflow orchestration, permission control, and agent coordination.
 
-| 能力 | 描述 |
-|------|------|
-| **多语言引擎** | Python / Node.js / Rust / Go 四语言协同 |
-| **工作流编排** | 高阶编排、任务调度与执行链路组织 |
-| **权限控制** | 细粒度权限控制与安全边界 |
-| **Agent 协作** | 多 Agent 协作与任务分发 |
-| **MCP 集成** | Model Context Protocol 集成能力 |
+| Capability | Description |
+|------------|-------------|
+| **Polyglot Engine** | Python / Node.js / Rust / Go combined |
+| **Workflow Orchestration** | High-level orchestration & task scheduling |
+| **Permission Control** | Fine-grained access control |
+| **Agent Coordination** | Multi-agent collaboration & task dispatch |
+| **MCP Integration** | Model Context Protocol integration |
 
 ---
 
-## 目录结构
+## Directory Structure
 
 ```
 Clex-AI-Ultra-Core/
@@ -39,44 +39,44 @@ Clex-AI-Ultra-Core/
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md
 ├── .gitignore
-├── specs/                          # 统一的 Schema 与契约
+├── specs/                          # Unified schemas and contracts
 │   ├── skill-manifest.schema.json
 │   ├── task-payload.schema.json
 │   ├── workflow.schema.json
 │   ├── permission.schema.json
 │   └── README.md
-├── core/                           # 运行时契约
+├── core/                           # Core runtime contracts
 │   ├── skill-mapping.json
 │   └── runtime-contracts.md
-├── docs/                           # 项目文档
+├── docs/                           # Project documentation
 │   ├── overview.md
 │   ├── architecture.md
 │   ├── capability-groups.md
 │   ├── roadmap.md
 │   └── release-plan.md
-├── skills/                         # 15 个公开安全的技能模块
-├── runtimes/                       # 多语言运行时层
-│   ├── python/                     # Python 运行时（编排层，MVP）
+├── skills/                         # 15 public-safe capability modules
+├── runtimes/                       # Polyglot runtime layer
+│   ├── python/                     # Python runtime (orchestration, MVP)
 │   │   ├── src/clex_python_core/
 │   │   ├── sdk/
 │   │   ├── examples/
 │   │   └── docs/
-│   ├── nodejs/                     # Node.js 运行时（CLI 层，Skeleton）
+│   ├── nodejs/                     # Node.js runtime (CLI layer, skeleton)
 │   │   ├── src/cli/
 │   │   ├── src/sdk/
 │   │   ├── examples/
 │   │   └── docs/
-│   ├── rust/                       # Rust 运行时（校验层，Skeleton）
+│   ├── rust/                       # Rust runtime (validation layer, skeleton)
 │   │   ├── src/bin/
 │   │   ├── src/lib/
 │   │   ├── examples/
 │   │   └── docs/
-│   └── go/                         # Go 运行时（Worker 层，Skeleton）
+│   └── go/                         # Go runtime (worker layer, skeleton)
 │       ├── cmd/worker/
 │       ├── internal/
 │       ├── examples/
 │       └── docs/
-├── examples/                       # Public Alpha 示例
+├── examples/                       # Public alpha demos
 │   ├── manifests/
 │   ├── workflows/
 │   ├── permissions/
@@ -85,7 +85,7 @@ Clex-AI-Ultra-Core/
 │   ├── nodejs/
 │   ├── rust/
 │   └── go/
-└── scripts/                        # 辅助脚本
+└── scripts/                        # Helper scripts
     ├── bootstrap.sh
     ├── bootstrap.ps1
     └── validate-all.py
@@ -93,138 +93,138 @@ Clex-AI-Ultra-Core/
 
 ---
 
-## 快速开始
+## Quick Start
 
-### 安装
+### Installation
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/1lvinx/Clex-AI-Ultra-Core.git
 cd Clex-AI-Ultra-Core
 
-# 验证仓库结构
+# Validate repository structure
 uv run python scripts/validate-all.py
 
-# 可选：安装 Python 运行时（MVP）
+# Optional: install Python runtime (MVP)
 cd runtimes/python
 uv pip install -e .
 cd ../..
 
-# 可选：安装 Node.js 运行时（CLI Skeleton）
+# Optional: install Node.js runtime (CLI skeleton)
 cd runtimes/nodejs
 npm install
 cd ../..
 
-# 可选：安装 Rust 运行时（Validator Skeleton）
+# Optional: install Rust runtime (Validator skeleton)
 cd runtimes/rust
 cargo build --release
 cd ../..
 
-# 可选：安装 Go 运行时（Worker Skeleton）
+# Optional: install Go runtime (Worker skeleton)
 cd runtimes/go
 go build ./cmd/worker
 cd ../..
 ```
 
-### 使用
+### Usage
 
 ```bash
-# Python 工作流编排示例（MVP）
+# Python workflow orchestration demo (MVP)
 uv run python -m clex_python_core.workflow examples/workflows/demo-workflow.json
 
-# Node.js CLI 入口（Skeleton）
+# Node.js CLI entrypoint (skeleton)
 node runtimes/nodejs/src/cli/index.js list-skills
 
-# Rust 校验器（Skeleton）
+# Rust validation (skeleton)
 cargo run --manifest-path runtimes/rust/Cargo.toml --bin clex-check -- manifest specs/skill-manifest.schema.json
 
-# Go Worker 任务分发（Skeleton）
+# Go worker task dispatch (skeleton)
 go run runtimes/go/cmd/worker/main.go
 ```
 
 ---
 
-## 架构
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    Clex-AI-Ultra Core                      │
 ├─────────────────────────────────────────────────────────────┤
-│  specs/        → 跨语言 Schema 与契约                       │
-│  core/         → 运行时映射与共享协议                       │
-│  python/       → 工作流编排（MVP）                          │
-│  nodejs/       → CLI 入口与开发者体验（Skeleton）           │
-│  rust/         → 校验与安全检查（Skeleton）                 │
-│  go/           → 并发 Worker 与任务执行（Skeleton）         │
-│  skills/       → 15 个公开安全的能力模块                   │
+│  specs/        → cross-language schemas and contracts      │
+│  core/         → runtime mapping and shared protocols      │
+│  python/       → workflow orchestration (MVP)              │
+│  nodejs/       → CLI entrypoint and developer UX (skeleton)│
+│  rust/         → validation and safety checks (skeleton)   │
+│  go/           → concurrent workers and task execution (skeleton)│
+│  skills/       → 15 public-safe capability modules         │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 能力分组
+## Capability Groups
 
-| 分组 | 名称 | 技能 |
-|------|------|------|
-| G1 | 命令处理 | cli-commands, command-classifier, permission-engine, cli-integration |
-| G2 | AI 能力 | ai-code-assistant, code-analysis, test-framework |
-| G3 | 工作流编排 | ai-workflows, task-dispatcher, background-tasks |
-| G4 | Agent 协作 | agent-teams, agent-communication |
+| Group | Name | Skills |
+|-------|------|--------|
+| G1 | Command Processing | cli-commands, command-classifier, permission-engine, cli-integration |
+| G2 | AI Capability | ai-code-assistant, code-analysis, test-framework |
+| G3 | Workflow Orchestration | ai-workflows, task-dispatcher, background-tasks |
+| G4 | Agent Coordination | agent-teams, agent-communication |
 
-详见 [`docs/capability-groups.md`](docs/capability-groups.md)。
-
----
-
-## 运行时成熟度
-
-| 运行时 | 完成度 | 状态 |
-|-------|-------|------|
-| Python | 工作流编排 + 任务调度核心 | 🟢 MVP（核心完成） |
-| Node.js | CLI 框架结构已定义 | 🟡 CLI Skeleton |
-| Rust | JSON Schema 校验逻辑已定义 | 🟡 Validator Skeleton |
-| Go | 任务分发 + Worker Pool 结构 | 🟡 Worker Skeleton |
+See [`docs/capability-groups.md`](docs/capability-groups.md) for full details.
 
 ---
 
-## 安全声明
+## Runtime Maturity
 
-本仓库设计为**公开安全项目**：
-
-- 无凭证、Token 或密钥
-- 无私有基础设施说明
-- 无未授权的非公开源码
-- 无其他项目的内部源码
-
-详见 [SECURITY.md](SECURITY.md)。
+| Runtime | Completion | Status |
+|---------|------------|--------|
+| Python | Workflow orchestration + scheduler core | 🟢 MVP (core complete) |
+| Node.js | CLI framework structure defined | 🟡 CLI skeleton |
+| Rust | JSON Schema validation logic defined | 🟡 Validator skeleton |
+| Go | Task dispatcher + worker pool structure | 🟡 Worker skeleton |
 
 ---
 
-## 路线图
+## Security
 
-| 版本 | 状态 | 功能 |
-|------|------|------|
-| **v0.1.0-public-alpha** | 🟢 当前 | Specs + Python MVP + Skeleton runtimes |
-| v1.0.0-core | 📅 计划 | 全部 stages 0-3 完成 |
-| v1.1.0-extended | 📅 未来 | Web UI + 技能市场 |
-| v2.0.0-local | 📅 未来 | 私有部署 + 企业功能 |
+This repository is designed as a **public-safe** project:
 
-详见 [`docs/roadmap.md`](docs/roadmap.md)。
+- No credentials, tokens, or secrets
+- No private infrastructure notes
+- No unauthorized non-public source materials
+- No internal source code from other projects
 
----
-
-## 贡献指南
-
-详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+See [SECURITY.md](SECURITY.md) for details.
 
 ---
 
-## 许可证
+## Roadmap
 
-MIT 许可证 —— 详见 [LICENSE](LICENSE)。
+| Version | Status | Features |
+|---------|--------|----------|
+| **v0.1.0-public-alpha** | 🟢 Current | Specs + Python MVP + Skeleton runtimes |
+| v1.0.0-core | 📅 Planned | All stages 0-3 complete |
+| v1.1.0-extended | 📅 Future | Web UI, Skill marketplace |
+| v2.0.0-local | 📅 Future | Local/Private deployment |
+
+See [`docs/roadmap.md`](docs/roadmap.md) for details.
 
 ---
 
-_© 2026 Clex-AI-Ultra Team。这是一个独立的开源项目，与任何公司无关联。_
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
+
+---
+
+_© 2026 Clex-AI-Ultra Team. This is an independent open source project and is not affiliated with any company._
 
 elvinx  
 2026-04-02 15:33 Asia/Shanghai
