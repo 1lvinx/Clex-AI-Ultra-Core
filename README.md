@@ -2,7 +2,7 @@
 
 > **Open Source Polyglot Core Edition for AI-assisted Development**
 
-**Status:** Public Alpha — Python MVP, Node.js CLI skeleton, Rust validator skeleton, Go worker skeleton.
+**Status:** Public Alpha — Python MCP, Node.js CLI skeleton, Rust validator skeleton, Go worker skeleton.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](runtimes/python/)
