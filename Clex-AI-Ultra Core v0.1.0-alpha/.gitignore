@@ -1,0 +1,48 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+
+# Logs / temp / cache
+*.log
+logs/
+tmp/
+temp/
+cache/
+
+# Archives / databases
+*.7z
+*.zip
+*.rar
+*.tar
+*.gz
+*.db
+*.sqlite
+
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.session
+*.token
+
+# Local machine notes
+TOOLS.local.md

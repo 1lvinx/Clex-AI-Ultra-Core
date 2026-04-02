@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clex-core"
+version = "1.0.0"
+description = "Python runtime for Clex-AI-Ultra Core - Workflow orchestration and task execution"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Clex-AI-Ultra Team"}
+]
+requires-python = ">=3.8"
+dependencies = [
+    "requests>=2.28.0",
+    "jsonschema>=4.17.0"
+]
+
+[project.scripts]
+clex-python = "clex_core.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/clex-ai-ultra/core"
+Repository = "https://github.com/clex-ai-ultra/core"
+Documentation = "https://github.com/clex-ai-ultra/core/docs"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["clex_core*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+select = ["E", "F", "W", "B"]
+ignore = ["E501", "B008"]
