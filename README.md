@@ -225,6 +225,3 @@ MIT License — see [LICENSE](LICENSE) for details.
 ---
 
 _© 2026 Clex-AI-Ultra Team. This is an independent open source project and is not affiliated with any company._
-
-elvinx  
-2026-04-02 15:33 Asia/Shanghai
