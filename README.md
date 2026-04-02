@@ -50,6 +50,7 @@ Clex-AI-Ultra-Core/
 │   ├── architecture.md
 │   ├── capability-groups.md
 │   ├── roadmap.md
+|   ├── tooling-example.md
 │   └── release-plan.md
 ├── skills/                         # 🧩 15 public-safe skills
 ├── runtimes/                       # 🚀 Polyglot runtime layer
