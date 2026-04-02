@@ -1,0 +1,102 @@
+# Environment files
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Log files
+*.log
+logs/
+logs/**/*
+tmp/
+temp/
+temp/**/*
+
+# Cache
+cache/
+cache/**/*
+__pycache__/
+**/__pycache__/node_modules/
+node_modules/**/*
+dist/
+dist/**/*
+build/
+build/**/*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Archive files
+*.7z
+*.zip
+*.rar
+*.tar
+*.gz
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Certificate files
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Session/token files
+*.session
+*.token
+**/*.session
+**/*.token
+
+# IDE files
+.idea/
+.idea/**/*
+.vscode/
+.vscode/**/*
+*.swp
+*.swo
+*~
+
+# Project files (should not be public)
+*.md.bak
+*.md.backup
+*.md.old
+*.md.tmp
+
+# Origin metadata (for internal tracking)
+origin.json
+_meta.json
+.clawhub/
+.clawhub/**/*
+
+# Test and development files
+test/
+tests/
+**/test_*.py
+**/*_test.py
+coverage/
+coverage/**/*
+
+# Generated files
+generated/
+generated/**/*
+*.generated.*
+
+# secrets and credentials (safety)
+secrets/
+credentials/
+**/secrets/**
+**/credentials/**
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Docker
+Dockerfile*
+docker-compose*
