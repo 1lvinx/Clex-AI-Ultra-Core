@@ -11,17 +11,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Full project documentation
 - Skill manifest, task, workflow, permission schemas
 - Capability groups definition
-- Python/Node.js runtime skeletons
+- Python/Node.js/Rust/Go runtime skeletons
 
 ## [v0.1.0-alpha] - 2026-04-02
 
 ### Added / 新增
-- Initial public-alpha release
+- Initial public-alpha release (Public Alpha Prep)
 - Polyglot Core Edition architecture
 - Specs (skill-manifest, task-payload, workflow, permission)
 - Documentation (README, overview, architecture, capability-groups)
 - Python runtime MVP (core, workflow, scheduler)
-- Node.js runtime skeleton (CLI entry)
+- Node.js runtime skeleton (CLI skeleton)
+- Rust validator skeleton (clex-check/clex-scan)
+- Go worker skeleton (task dispatcher)
+- Examples with demo workflows
 
 ### Changed / 变更
 - Specification move: spec/ → specs/

@@ -16,12 +16,12 @@ Clex-AI-Ultra Core 是一个**多语言工程化核心版本 (Polyglot Core Edit
 
 ## Why Polyglot? / 为什么多语言？
 
-| 语言 | 职责 | 优势 |
+| 语言 | 职责 | 状态 |
 |------|------|------|
-| Python | Workflow orchestration | 简单语法、丰富生态 |
-| Node.js | CLI & SDK | 最佳 CLI 框架 |
-| Rust | Validation | 内存安全、编译时检查 |
-| Go | Worker & parallelism | Goroutines、生产就绪 |
+| Python | Workflow orchestration | MVP |
+| Node.js | CLI & SDK | Skeleton |
+| Rust | Validation | Skeleton |
+| Go | Worker & parallelism | Skeleton |
 
 ## Project Goals / 项目目标
 
@@ -32,7 +32,7 @@ Clex-AI-Ultra Core 是一个**多语言工程化核心版本 (Polyglot Core Edit
 
 ## Roadmap / 发展路线
 
-- **v0.1.0-alpha** - Core 基础架构
+- **v0.1.0-alpha** - Core 基础架构 (Public Alpha Prep)
 - **v1.0.0-core** - 完整 Core Edition
 - **v1.1.0-extended** - Extended Edition
 - **v2.0.0-local** - Local/Private Edition
