@@ -1,46 +1,60 @@
-# Workflow Demo / 工作流示例
+# Examples / 示例
 
-这个目录包含 Clex-AI-Ultra Core 的工作流演示文件。
+This directory contains demo files for Clex-AI-Ultra Core Public Alpha validation.
 
-## 演示链路
+本目录包含 Clex-AI-Ultra Core Public Alpha 的验证示例文件。
 
-1. `workflow-greeting.json` → Python orchestrator
-2. `workflow-.task.json` → Node.js CLI
+## Demo Files / 演示文件
 
----
+| File / 文件 | Description / 描述 | Runtime / 运行时 |
+|-------------|-------------------|------------------|
+| `workflows/demo-workflow.json` | 4-step multi-runtime workflow chain (Node.js→Rust→Python→Go) | Python (orchestrator) |
+| `manifests/demo-skill-manifest.json` | Skill manifest template with double-language desc | Node.js (CLI) + Python |
+| `permissions/demo-permission-rule.json` | 5 permission rules with allow/deny/priority | Rust (validator) |
+| `tasks/demo-task.json` | Task payload with durationMs/metadata/status | Go (worker) |
 
-## hello world
+## Usage / 使用方法
 
-```json
-{
-  "id": "hello-world",
-  "name": {
-    "en": "Hello World",
-    "zh": "你好世界"
-  },
-  "steps": [
-    {
-      "id": "1",
-      "name": {
-        "en": "Greeting",
-        "zh": "问候"
-      },
-      "skill": "cli-commands",
-      "action": "echo",
-      "params": {
-        "message": "Hello, Clex-AI-Ultra Core!"
-      },
-      "timeoutMs": 5000,
-      "retry": {
-        "count": 2,
-        "delayMs": 1000
-      },
-      "onFailure": "continue"
-    }
-  ]
-}
+### Python Runtime (编排层)
+
+```bash
+cd runtimes/python
+python -m clex_python_core.workflow ../examples/workflows/demo-workflow.json
 ```
 
----
+### Node.js Runtime (CLI 层)
 
-_最后更新：2026-04-02_
+```bash
+cd runtimes/nodejs
+node src/cli/index.js inspect elvinx-ai-code-assistant ../examples/manifests/demo-skill-manifest.json
+node src/cli/clex-check.js manifest ../examples/manifests/demo-skill-manifest.json
+```
+
+### Rust Runtime (校验层)
+
+```bash
+cd runtimes/rust
+cargo run -- clex-check manifest ../examples/manifests/demo-skill-manifest.json
+cargo run -- clex-check permission ../examples/permissions/demo-permission-rule.json
+cargo run -- clex-check workflow ../examples/workflows/demo-workflow.json
+```
+
+### Go Runtime (Worker 并发层)
+
+```bash
+cd runtimes/go
+go run cmd/worker/main.go --task ../examples/tasks/demo-task.json
+```
+
+## Validation / 验证
+
+```bash
+# Full validation / 全面验证
+python scripts/validate-all.py
+```
+
+## Release Status / 发布状态
+
+- **Current**: Public Alpha Prep (v0.1.0-alpha)
+- **Status**: Demo files are public-safe, no credentials or sensitive data
+- **Next**: v1.0.0-core (full runtime completion)

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "elvinx-ai-code-assistant",
+  "version": "0.1.0-alpha",
+  "description": {
+    "en": "AI-assisted code generation and analysis for multiple languages",
+    "zh": "多语言 AI 辅助代码生成与分析能力"
+  },
+  "author": "Clex-AI-Ultra Team",
+  "capabilityGroup": "G2-AI Capability",
+  "commands": [
+    {
+      "name": "generate",
+      "description": {
+        "en": "Generate code from natural language description",
+        "zh": "从自然语言描述生成代码"
+      },
+      "arguments": [
+        {
+          "name": "language",
+          "required": true,
+          "type": "string",
+          "description": "Target programming language"
+        },
+        {
+          "name": "prompt",
+          "required": true,
+          "type": "string",
+          "description": "Code description in natural language"
+        }
+      ]
+    },
+    {
+      "name": "analyze",
+      "description": {
+        "en": "Analyze code for issues and improvements",
+        "zh": "分析代码问题与改进点"
+      },
+      "arguments": [
+        {
+          "name": "code",
+          "required": true,
+          "type": "string",
+          "description": "Source code to analyze"
+        },
+        {
+          "name": "rules",
+          "required": false,
+          "type": "array",
+          "description": "Analysis rules to apply"
+        }
+      ]
+    }
+  ],
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "taskType": { "const": "code-assistant" },
+      "command": { "type": "string", "enum": ["generate", "analyze"] },
+      "arguments": { "type": "object" }
+    },
+    "required": ["taskType", "command", "arguments"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "taskId": { "type": "string" },
+      "status": { "type": "string", "enum": ["pending", "processing", "completed", "failed"] },
+      "result": { "type": "object" }
+    },
+    "required": ["taskId", "status", "result"]
+  },
+  "runtimeTargets": ["python", "nodejs"],
+  "dependencies": ["mcp-integration"]
+}
