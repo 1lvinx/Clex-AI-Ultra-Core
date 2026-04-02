@@ -2,28 +2,44 @@
 
 ## Security Policy / 安全政策
 
-This project follows strict security practices to ensure no sensitive data leaks into the public repository.
+This project is maintained with public-release hygiene in mind. The goal is to keep the repository safe to review, fork, and redistribute within its license terms.
 
-## What We Protect / 我们保护的内容
+本项目以“可公开发布”为前提进行维护，目标是让仓库在许可证允许范围内可被安全审阅、分发与复用。
 
-1. **No credentials** - No API keys, tokens, passwords, or secrets
-2. **No personal data** - No contacts, preferences, or private notes
-3. **No internal code** - No proprietary or leaked code from other projects
-4. **No internal docs** - No internal meeting notes or project worklogs
+## What We Protect / 我们重点保护的内容
 
-## Vulnerability Reporting / 漏洞报告
+1. **No credentials** — no API keys, tokens, passwords, certificates, or secrets
+2. **No personal data** — no contacts, preferences, private notes, or local infrastructure details
+3. **No unauthorized code** — no proprietary, internal, or leaked source code from third parties
+4. **No unsafe local state** — no environment-specific caches, logs, session files, or machine-only notes
 
-If you find a security issue, please report it responsibly:
-- Open an Issue with "SECURITY" in the title
-- Do not disclose publicly until fixed
-- We will respond within 72 hours
+## Reporting a Security Issue / 漏洞报告方式
+
+If you discover a security problem:
+
+- Open an Issue with `SECURITY` in the title
+- Do **not** paste secrets, tokens, or private infrastructure details into a public issue
+- Share only the minimum information needed to reproduce the problem
+- We will review reports as quickly as practical
+
+如果你发现安全问题：
+
+- 请创建标题包含 `SECURITY` 的 Issue
+- **不要** 在公开 Issue 中粘贴密钥、令牌或私有基础设施信息
+- 仅提供复现问题所需的最少信息
+- 我们会在合理时间内尽快处理
 
 ## Security Best Practices / 安全最佳实践
 
-1. All skills are open-source and auditable
-2. No hardcoded credentials
-3. No environment-specific paths
-4. All documentation is public-ready
+- Keep local notes in untracked files such as `TOOLS.local.md`
+- Never commit `.env`, session files, logs, keys, or machine-specific notes
+- Review diffs before every commit and push
+- Revoke and rotate any credential that was ever committed by mistake
+
+- 将本地备注保存在未跟踪文件中，例如 `TOOLS.local.md`
+- 不要提交 `.env`、会话文件、日志、密钥或机器专用说明
+- 每次提交和推送前检查 diff
+- 一旦误提交凭证，立即吊销并轮换
 
 ---
 
