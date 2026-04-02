@@ -2,18 +2,20 @@
 
 ## v0.1.0-alpha (当前) / Current
 
-**Status**: 🚧 In progress
+**Status**: 🚧 Public Alpha Prep (not yet public release)
 
 ### Features
 - Specs (skill-manifest, task-payload, workflow, permission)
 - Core (skill-mapping, runtime-contracts)
 - Docs (architecture, overview, capability-groups)
 - Python Runtime MVP (core, workflow, scheduler)
-- Node.js Runtime skeleton (CLI entry)
-- Examples and validation scripts
+- Node.js Runtime skeleton (CLI skeleton)
+- Rust Validator skeleton (clex-check/clex-scan)
+- Go Worker skeleton (task dispatcher)
+- Examples with demo workflows
 
 ### Repository
-- **Type**: Private → Public
+- **Type**: Private
 - **License**: MIT
 - **Language**: English (primary) + Chinese (secondary)
 
@@ -56,16 +58,16 @@
 
 ## Publishing Checklist / 发布检查清单
 
-- [ ] README.md 完成
-- [ ] LICENSE 存在
-- [ ] SECURITY.md 完成
-- [ ] CHANGELOG.md 完成
-- [ ] CONTRIBUTING.md 完成
-- [ ] GitHub About 填写
-- [ ] GitHub Topics 添加
-- [ ] Private repo 创建完成
-- [ ] First push 完成
-- [ ] Release notes 准备完成
+- [x] README.md 完成
+- [x] LICENSE 存在
+- [x] SECURITY.md 完成
+- [x] CHANGELOG.md 完成
+- [x] CONTRIBUTING.md 完成
+- [x] GitHub About 填写
+- [x] GitHub Topics 添加
+- [x] Private repo 创建完成
+- [x] First push 完成
+- [x] Release notes 准备完成
 
 ---
 
