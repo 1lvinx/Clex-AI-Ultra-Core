@@ -228,6 +228,3 @@ MIT 许可证 —— 详见 [LICENSE](LICENSE)。
 ---
 
 _© 2026 Clex-AI-Ultra Team。这是一个独立的开源项目，与任何公司无关联。_
-
-elvinx  
-2026-04-02 16:23 Asia/Shanghai
