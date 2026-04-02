@@ -1,7 +1,7 @@
 # Clex-AI-Ultra Core
 
 > **Open Source Polyglot Core Edition for AI-assisted Development**
-
+Status: Public Alpha — Python MVP, Node.js CLI skeleton, Rust validator skeleton, Go worker skeleton.
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](runtimes/python/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](runtimes/nodejs/)
