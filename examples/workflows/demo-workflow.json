@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "name": "Demo Workflow - Multi-Runtime Validation",
+  "description": {
+    "en": "Minimal workflow chain demonstrating multi-runtime execution (Python编排/Node.js CLI/Rust验证/Go worker)",
+    "zh": "最小工作流链路演示：多语言运行时协同（Python orchestration / Node.js CLI / Rust validation / Go worker）"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-prepare",
+      "skill": "cli-commands",
+      "action": "execute",
+      "dependsOn": [],
+      "runtimeTarget": "nodejs",
+      "timeoutMs": 30000,
+      "retry": 2,
+      "onFailure": "continue",
+      "input": {
+        "command": "ls",
+        "args": ["-la"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "stdout": { "type": "string" },
+          "stderr": { "type": "string" },
+          "exitCode": { "type": "integer" }
+        }
+      }
+    },
+    {
+      "stepId": "step-2-validate",
+      "skill": "task-dispatcher",
+      "action": "validate",
+      "dependsOn": ["step-1-prepare"],
+      "runtimeTarget": "rust",
+      "timeoutMs": 15000,
+      "retry": 1,
+      "onFailure": "abort",
+      "input": {
+        "taskType": "manifest",
+        "dataPath": "../specs/skill-manifest.schema.json"
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "isValid": { "type": "boolean" },
+          "errors": { "type": "array" }
+        }
+      }
+    },
+    {
+      "stepId": "step-3-process",
+      "skill": "ai-workflows",
+      "action": "process",
+      "dependsOn": ["step-2-validate"],
+      "runtimeTarget": "python",
+      "timeoutMs": 60000,
+      "retry": 3,
+      "onFailure": "retry",
+      "input": {
+        "payload": {
+          "taskType": "validate",
+          "priority": "high"
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "taskId": { "type": "string" },
+          "status": { "type": "string" },
+          "result": { "type": "object" }
+        }
+      }
+    },
+    {
+      "stepId": "step-4-report",
+      "skill": "background-tasks",
+      "action": "notify",
+      "dependsOn": ["step-3-process"],
+      "runtimeTarget": "go",
+      "timeoutMs": 10000,
+      "retry": 1,
+      "onFailure": "continue",
+      "input": {
+        "task": {
+          "taskId": "${step-3-process.output.taskId}",
+          "status": "${step-3-process.output.status}"
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "notificationSent": { "type": "boolean" },
+          "workerId": { "type": "string" }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "version": "v0.1.0-alpha",
+    "languageStack": ["python", "nodejs", "rust", "go"],
+    "runtimeTargets": {
+      "step-1-prepare": "nodejs/cli",
+      "step-2-validate": "rust/validator",
+      "step-3-process": "python/orchestrator",
+      "step-4-report": "go/worker"
+    }
+  }
+}

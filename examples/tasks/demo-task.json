@@ -1,0 +1,32 @@
+{
+  "taskId": "demo-task-20260402-001",
+  "taskType": "validate",
+  "priority": "medium",
+  "status": "pending",
+  "durationMs": 30000,
+  "metadata": {
+    "version": "v0.1.0-alpha",
+    "createdBy": "manual",
+    "labels": ["demo", "validation", "multi-runtime"],
+    "source": "examples/tasks/demo-task.json"
+  },
+  "payload": {
+    "validatorType": "manifest",
+    "source": "examples/manifests/demo-skill-manifest.json",
+    "schema": "specs/task-payload.schema.json"
+  },
+  "runtimeTarget": "python",
+  "timeoutMs": 60000,
+  "retry": {
+    "maxAttempts": 3,
+    "backoff": "exponential",
+    "initialDelayMs": 1000
+  },
+  "onFailure": {
+    "action": "notify",
+    "channel": "default"
+  },
+  "dependencies": [],
+  "createdAt": "2026-04-02T05:00:00Z",
+  "expiresAt": "2026-04-03T05:00:00Z"
+}

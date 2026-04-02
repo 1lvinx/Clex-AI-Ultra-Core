@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "name": "Default Permission Policy",
+  "description": {
+    "en": "Default permission rules for Clex-AI-Ultra Core Public Alpha",
+    "zh": "Clex-AI-Ultra Core Public Alpha 默认权限策略"
+  },
+  "rules": [
+    {
+      "ruleId": "rule-1-skill-read",
+      "action": "allow",
+      "priority": 100,
+      "matcherType": "exact",
+      "resource": "skill:*:read",
+      "conditions": {
+        "userType": "any",
+        "timeWindow": "any"
+      }
+    },
+    {
+      "ruleId": "rule-2-skill-execute",
+      "action": "allow",
+      "priority": 80,
+      "matcherType": "wildcard",
+      "resource": "skill:*:execute",
+      "conditions": {
+        "userType": "authenticated",
+        "timeWindow": "any"
+      }
+    },
+    {
+      "ruleId": "rule-3-sensitive-cmd",
+      "action": "deny",
+      "priority": 200,
+      "matcherType": "regex",
+      "resource": "command:(rm|del|format|mkfs).*",
+      "conditions": {
+        "userType": "any",
+        "timeWindow": "any"
+      }
+    },
+    {
+      "ruleId": "rule-4-admin-only",
+      "action": "allow",
+      "priority": 50,
+      "matcherType": "exact",
+      "resource": "config:update",
+      "conditions": {
+        "userType": "admin",
+        "timeWindow": "any"
+      }
+    },
+    {
+      "ruleId": "rule-5-implicit-deny",
+      "action": "deny",
+      "priority": 1,
+      "matcherType": "any",
+      "resource": "*:*:*",
+      "conditions": {
+        "userType": "any",
+        "timeWindow": "any"
+      }
+    }
+  ],
+  "defaultAction": "deny",
+  "logViolations": true,
+  "version": "v0.1.0-alpha"
+}
