@@ -53,7 +53,8 @@ Clex-AI-Ultra-Core/
 │   ├── architecture.md
 │   ├── capability-groups.md
 │   ├── roadmap.md
-│   └── release-plan.md
+│   ├── release-plan.md
+│   └── tooling-example.md
 ├── skills/                         # 15 public-safe capability modules
 ├── runtimes/                       # Polyglot runtime layer
 │   ├── python/                     # Python runtime (orchestration, MVP)
@@ -194,6 +195,8 @@ This repository is designed as a **public-safe** project:
 - No private infrastructure notes
 - No unauthorized non-public source materials
 - No internal source code from other projects
+
+For local tooling notes, use `docs/tooling-example.md` as a template and keep your personal notes in a separate `TOOLS.local.md` file (not tracked).
 
 See [SECURITY.md](SECURITY.md) for details.
 
