@@ -1,8 +1,8 @@
 # Release Plan / 发布计划
 
-## v0.1.0-alpha (当前) / Current
+## v0.1.0-public-alpha (当前) / Current
 
-**Status**: 🚧 Public Alpha Prep (not yet public release)
+**Status**: 🟢 Public Alpha (first public release)
 
 ### Features
 - Specs (skill-manifest, task-payload, workflow, permission)
@@ -68,6 +68,7 @@
 - [x] Private repo 创建完成
 - [x] First push 完成
 - [x] Release notes 准备完成
+- [x] README 英文化完成
 
 ---
 
