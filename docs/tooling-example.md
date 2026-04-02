@@ -29,14 +29,14 @@ Copy it to `TOOLS.local.md` and keep that local file out of version control.
 - Tokens
 - Private certificates
 - Session cookies
-- Anything that would grant access if leaked
+- Anything that would grant access if exposed
 
 - 密码
 - API Key
 - Token
 - 私钥或证书
 - Session Cookie
-- 任何一旦泄露就会导致访问风险的信息
+- 任何一旦暴露就会导致访问风险的信息
 
 ## Suggested workflow / 推荐用法
 
