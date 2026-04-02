@@ -27,7 +27,7 @@ Clex-AI-Ultra Core is an **Open Source Polyglot Core Edition** for AI-assisted d
 
 1. **Public-safe** - No credentials, no private infrastructure, no unauthorized source code
 2. **Extensible Architecture** - Modular design, easy to extend
-3. **Cross-language Collaboration** - Python / Node.js / Rust / Go协同
+3. **Cross-language Collaboration** - Python / Node.js / Rust / Go combined
 4. **Engineering Documentation** - Complete architecture and usage documentation
 
 ## Roadmap
