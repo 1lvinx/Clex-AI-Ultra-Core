@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-04-02T12:15:00Z",
+  "version": "1.0.0",
+  "groupings": [
+    {
+      "id": "G1",
+      "name": "Command Processing",
+      "description": "命令解析、分类、权限控制",
+      "tags": ["validation", "policy", "security"]
+    },
+    {
+      "id": "G2",
+      "name": "AI Capability",
+      "description": "AI 辅助编程、代码生成、分析、修护",
+      "tags": ["coding", "testing", "automation"]
+    },
+    {
+      "id": "G3",
+      "name": "Workflow Orchestration",
+      "description": "工作流编排、任务调度、Agent 协作",
+      "tags": ["workflow", "automation", "orchestration"]
+    },
+    {
+      "id": "G4",
+      "name": "Protocol Integration",
+      "description": "MCP 协议集成",
+      "tags": ["protocol", "integration", "context"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "cli-commands",
+      "primaryGroup": "G1",
+      "tags": ["cli", "validation", "security"],
+      "description": "CLI 命令统一集成与管理",
+      "runtimes": ["nodejs", "python"]
+    },
+    {
+      "name": "command-classifier",
+      "primaryGroup": "G1",
+      "tags": ["validation", "security"],
+      "description": "命令风险分类器",
+      "runtimes": ["nodejs", "python", "rust"]
+    },
+    {
+      "name": "permission-engine",
+      "primaryGroup": "G1",
+      "tags": ["security", "policy", "access-control"],
+      "description": "细粒度权限控制系统",
+      "runtimes": ["nodejs", "python", "rust"]
+    },
+    {
+      "name": "cli-integration",
+      "primaryGroup": "G1",
+      "tags": ["cli", "integration"],
+      "description": "CLI 命令统一注册与路由",
+      "runtimes": ["nodejs"]
+    },
+    {
+      "name": "ai-code-assistant",
+      "primaryGroup": "G2",
+      "tags": ["coding", "automation"],
+      "description": "AI 辅助编程（生成/解释/修复/重构/文档）",
+      "runtimes": ["python", "nodejs"]
+    },
+    {
+      "name": "code-analysis",
+      "primaryGroup": "G2",
+      "tags": ["testing", "quality"],
+      "description": "代码质量分析（复杂度/依赖/安全）",
+      "runtimes": ["python", "rust"]
+    },
+    {
+      "name": "test-framework",
+      "primaryGroup": "G2",
+      "tags": ["testing", "validation", "quality"],
+      "description": "测试框架与验证",
+      "runtimes": ["python", "nodejs"]
+    },
+    {
+      "name": "ai-workflows",
+      "primaryGroup": "G3",
+      "tags": ["workflow", "automation", "pipeline"],
+      "description": "AI 工作流编排与执行",
+      "runtimes": ["python", "nodejs"]
+    },
+    {
+      "name": "task-dispatcher",
+      "primaryGroup": "G3",
+      "tags": ["workflow", "orchestration"],
+      "description": "智能任务分配与调度",
+      "runtimes": ["python", "nodejs"]
+    },
+    {
+      "name": "background-tasks",
+      "primaryGroup": "G3",
+      "tags": ["workflow", "automation"],
+      "description": "后台任务调度与进度追踪",
+      "runtimes": ["python", "nodejs"]
+    },
+    {
+      "name": "agent-teams",
+      "primaryGroup": "G3",
+      "tags": ["orchestration", "collaboration"],
+      "description": "Agent 团队管理与协作",
+      "runtimes": ["python", "nodejs"]
+    },
+    {
+      "name": "agent-communication",
+      "primaryGroup": "G3",
+      "tags": ["protocol", "orchestration"],
+      "description": "Agent 通信机制（消息队列/发布订阅）",
+      "runtimes": ["python", "nodejs", "go"]
+    },
+    {
+      "name": "mcp-integration",
+      "primaryGroup": "G4",
+      "tags": ["protocol", "integration", "context"],
+      "description": "Model Context Protocol 客户端",
+      "runtimes": ["python", "nodejs", "go"]
+    }
+  ]
+}

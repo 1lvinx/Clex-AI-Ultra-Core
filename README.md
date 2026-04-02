@@ -1,168 +1,192 @@
-# Clex-AI-Ultra
+# Clex-AI-Ultra Core
 
-## Project Overview / 项目简介
+> **Open Source Polyglot Core Edition for AI-assisted Development**
 
-**中文**：  
-面向 OpenClaw 的 AI 开发增强技能集合与工程化文档包。
-
-**English**:  
-A curated OpenClaw skill pack and engineering documentation set for AI-assisted development.
-
----
-
-## Features / 主要特性
-
-- ✅ **15 curated skills**：覆盖 AI 代码助手、任务分发、MCP 集成、CLI 整合等核心能力
-- ✅ **Modular architecture**：每个技能独立目录，可按需启用
-- ✅ **Engineering-grade documentation**：提供完整的说明文档、安装说明与贡献规范
-- ✅ **Simple installation**：支持直接复制或使用脚本安装
-- ✅ **Public-safe repository**：仅包含可公开发布的内容，不包含未授权私有源码、凭证或敏感信息
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](runtimes/python/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](runtimes/nodejs/)
+[![Rust](https://img.shields.io/badge/Rust-1.70+-orange.svg)](runtimes/rust/)
+[![Go](https://img.shields.io/badge/Go-1.21+-blue.svg)](runtimes/go/)
 
 ---
 
-## Directory Structure / 目录结构
+## 🏛️ Core Capabilities
 
-```text
-Clex-AI-Ultra/
-├─ README.md               # 项目说明
-├─ LICENSE                 # 开源协议
-├─ .gitignore              # Git 忽略规则
-├─ CHANGELOG.md            # 更新日志
-├─ SECURITY.md             # 安全说明
-├─ CONTRIBUTING.md         # 贡献指南
-├─ TOOLS.example.md        # 本地工具与环境记录模板
-├─ avatars/                # 头像或静态资源
-├─ docs/                   # 项目文档
-│  ├─ overview.md
-│  ├─ installation.md
-│  ├─ quick-start.md
-│  ├─ architecture.md
-│  ├─ skills-guide.md
-│  ├─ roadmap.md
-│  └─ faq.md
-├─ skills/                 # 技能目录（15 个）
-│  ├─ agent-communication/
-│  ├─ agent-teams/
-│  ├─ ai-code-assistant/
-│  ├─ ai-workflows/
-│  ├─ background-tasks/
-│  ├─ cli-commands/
-│  ├─ cli-integration/
-│  ├─ code-analysis/
-│  ├─ command-classifier/
-│  ├─ dev-tools/
-│  ├─ git-operations/
-│  ├─ mcp-integration/
-│  ├─ permission-engine/
-│  ├─ task-dispatcher/
-│  └─ test-framework/
-├─ scripts/                # 辅助脚本
-│  ├─ install.sh
-│  ├─ install.ps1
-│  └─ validate-skills.py
+Clex-AI-Ultra Core 是一个**多语言工程化核心版本**，为 OpenClaw 提供 AI-assisted development 能力增强。
+
+| 能力 | 描述 |
+|------|------|
+| **Polyglot Engine** | Python/Node.js/Rust/Go 四语言协同 |
+| **Workflow Orchestration** | 高阶编排与任务调度 |
+| **Permission Control** | 细粒度安全控制 |
+| **Agent Coordination** | 多 Agent 协作 |
+| **MCP Integration** | Model Context Protocol 集成 |
+
+---
+
+## 📦 Directory Structure
+
+```
+Clex-AI-Ultra-Core/
+├── README.md
+├── LICENSE
+├── SECURITY.md
+├── contributing.md
+├── CHANGELOG.md
+├── .gitignore
+├── specs/                          # 📐 统一规范层
+│   ├── skill-manifest.schema.json
+│   ├── task-payload.schema.json
+│   ├── workflow.schema.json
+│   ├── permission.schema.json
+│   └── README.md
+├── core/                           # 🎯 核心契约
+│   ├── skill-mapping.json
+│   └── runtime-contracts.md
+├── docs/                           # 📚 项目文档
+│   ├── overview.md
+│   ├── architecture.md
+│   ├── capability-groups.md
+│   ├── roadmap.md
+│   └── release-plan.md
+├── skills/                         # 🧩 15 个公开安全技能
+├── runtimes/                       # 🚀 四语言运行时
+│   ├── python/                     # Python Runtime (编排层)
+│   │   ├── src/clex_python_core/
+│   │   ├── sdk/
+│   │   ├── examples/
+│   │   └── docs/
+│   ├── nodejs/                     # Node.js Runtime (CLI层)
+│   │   ├── src/cli/
+│   │   ├── src/sdk/
+│   │   ├── examples/
+│   │   └── docs/
+│   ├── rust/                       # Rust Runtime (校验层)
+│   │   ├── src/bin/
+│   │   ├── src/lib/
+│   │   ├── examples/
+│   │   └── docs/
+│   └── go/                         # Go Runtime (worker并发层)
+│       ├── cmd/worker/
+│       ├── internal/
+│       ├── examples/
+│       └── docs/
+├── examples/                       # 📖 示例与演示
+│   ├── manifests/
+│   ├── workflows/
+│   ├── python/
+│   ├── nodejs/
+│   ├── rust/
+│   └── go/
+└── scripts/                        # 🔧 辅助脚本
+    ├── bootstrap.sh
+    ├── bootstrap.ps1
+    └── validate-all.py
 ```
 
-> `TOOLS.local.md` is recommended for personal machine notes and should stay untracked.  
-> 建议将个人机器相关备注写入 `TOOLS.local.md`，并保持不纳入版本控制。
-
 ---
 
-## Installation / 安装方式
+## 🚀 Quick Start
 
-**Quick install / 快速安装**
+### Installation
 
 ```bash
-# Linux/macOS
-cp -r Clex-AI-Ultra/skills/* ~/.openclaw/workspace/skills/
+# Clone the repository
+git clone https://github.com/<your-org>/Clex-AI-Ultra-Core.git
+cd Clex-AI-Ultra-Core
 
-# Windows (PowerShell)
-Copy-Item -Path "Clex-AI-Ultra\skills\*" -Destination "$env:USERPROFILE\.openclaw\workspace\skills\" -Recurse -Force
+# Install Python runtime
+cd runtimes/python
+pip install -e .
+
+# Install Node.js runtime
+cd ../nodejs
+npm install
+
+# Validate installation
+python scripts/validate-all.py
 ```
 
-**Script-based install / 脚本安装**
+### Usage
 
 ```bash
-# Linux/macOS
-./scripts/install.sh
+# Python workflow orchestration
+python -m clex_python_core.workflow examples/demo_workflow.json
 
-# Windows
-.\scripts\install.ps1
+# Node.js CLI
+node runtimes/nodejs/src/cli/index.js list-skills
+
+# Rust validation
+./runtimes/rust/clex-check manifest specs/skill-manifest.schema.json
 ```
 
-> The default workspace path may vary by deployment. Review the install scripts if your OpenClaw workspace uses a custom location.  
-> OpenClaw 的默认工作区路径可能因部署方式不同而变化，如有自定义路径请先检查安装脚本。
+---
+
+## 🎯 Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Clex-AI-Ultra Core                        │
+├─────────────────────────────────────────────────────────────┤
+│  spec/ (Cross-lang contract) → define schemas               │
+│  core/ (Runtime contracts) → define protocols                │
+│  runtimes/python/ → workflow orchestration                  │
+│  runtimes/nodejs/ → CLI entrypoint                          │
+│  runtimes/rust/ → validation & security                     │
+│  runtimes/go/ → concurrent workers                            │
+│  skills/ → 15 public-safe skills                            │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## Quick Start / 快速开始
+## 📊 Capability Groups
 
-1. Copy the `skills/` directory into your OpenClaw workspace.  
-   将 `skills/` 复制到你的 OpenClaw 工作区。
-2. Restart OpenClaw.  
-   重启 OpenClaw。
-3. Run `/help` and verify the available skills.  
-   运行 `/help` 检查可用技能。
-4. Optional: copy `TOOLS.example.md` to `TOOLS.local.md` for machine-specific notes.  
-   可选：将 `TOOLS.example.md` 复制为 `TOOLS.local.md`，记录本地环境说明。
+| Group | Name | Skills |
+|-------|------|--------|
+| G1 | Command Processing | cli-commands, command-classifier, permission-engine |
+| G2 | AI Capability | ai-code-assistant, code-analysis, test-framework |
+| G3 | Workflow Orchestration | ai-workflows, task-dispatcher, background-tasks |
+| G4 | Protocol Integration | mcp-integration |
 
----
-
-## Skills Overview / 技能概览
-
-| Skill | Description | 功能描述 |
-|-------|-------------|----------|
-| `agent-communication` | Agent messaging and coordination | Agent 间通信与协调 |
-| `agent-teams` | Multi-agent team management | 多 Agent 团队协作管理 |
-| `ai-code-assistant` | AI-assisted programming workflows | AI 辅助编程流程 |
-| `ai-workflows` | Workflow orchestration and execution | 工作流编排与执行 |
-| `background-tasks` | Background task scheduling | 后台任务调度与跟踪 |
-| `cli-commands` | CLI command wrappers | CLI 命令封装与管理 |
-| `cli-integration` | CLI tool integration | CLI 工具集成与扩展 |
-| `code-analysis` | Code quality analysis | 代码质量分析与检查 |
-| `command-classifier` | Command classification and routing | 指令分类与路由 |
-| `dev-tools` | Developer utility bundle | 开发者工具集合 |
-| `git-operations` | Git operation wrappers | Git 操作封装 |
-| `mcp-integration` | Model Context Protocol integration | MCP 协议集成 |
-| `permission-engine` | Permission control engine | 权限控制系统 |
-| `task-dispatcher` | Task dispatch and scheduling | 任务分发与调度 |
-| `test-framework` | Validation and testing support | 测试框架与验证 |
+See `docs/capability-groups.md` for full details.
 
 ---
 
-## Usage / 使用说明
+## 🛡️ Security
 
-All skills follow the standard OpenClaw skill layout:
+This repository is public-safe:
+- No credentials, tokens, or secrets
+- No leaked or proprietary code
+- No internal source code from other projects
 
-- `SKILL.md` as the primary documentation entry
-- Optional runtime helpers such as `index.js`
-- Optional support folders like `references/`, `assets/`, or `scripts/`
-
-See `docs/skills-guide.md` for detailed usage guidance.  
-更多使用说明请参阅 `docs/skills-guide.md`。
+See [SECURITY.md](SECURITY.md) for details.
 
 ---
 
-## License / 许可证
+## 📝 Roadmap
 
-MIT License.
+| Version | Status | Features |
+|---------|--------|----------|
+| v0.1.0-alpha | 🚧 In progress | specs + Python MVP + Node.js MVP |
+| v1.0.0-core | 📅 Planned | Full Core Edition |
+| v1.1.0-extended | 📅 Planned | Extended Edition |
+| v2.0.0-local | 📅 Planned | Local/Private Edition |
 
----
-
-## Security Statement / 安全说明
-
-This repository is intended to be public-safe. It excludes private credentials, environment-specific secrets, unauthorized proprietary source code, and sensitive operational notes. Please review your local files before publishing forks or derived repositories.  
-本仓库以可公开发布为目标，不包含私有凭证、环境机密、未授权专有源码或敏感运维记录。发布分支或衍生仓库前，请再次检查你的本地文件。
-
----
-
-## Contributing / 贡献指南
-
-Issues and Pull Requests are welcome. Please read `CONTRIBUTING.md` before submitting changes.  
-欢迎提交 Issue 和 Pull Request，提交前请先阅读 `CONTRIBUTING.md`。
+See `docs/roadmap.md` for details.
 
 ---
 
-## FAQ / 常见问题
+## 🤝 Contributing
 
-See `docs/faq.md` for frequently asked questions.  
-常见问题请查看 `docs/faq.md`。
+See [contributing.md](contributing.md) for contribution guidelines.
+
+---
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+_© 2026 Clex-AI-Ultra Team. This is an independent open source project, not affiliated with any company._

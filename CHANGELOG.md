@@ -1,26 +1,31 @@
 # Changelog / 更新日志
 
-All notable changes to this project will be documented in this file.  
-本项目的重要变更都会记录在这里。
+All notable changes to this project will be documented in this file.
 
-The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  
-格式遵循 Keep a Changelog，并采用 Semantic Versioning。
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased] / 未发布
 
 ### Added / 新增
 - Full project documentation
-- Skill validator script
-- Automated installation scripts
-- Local tooling template (`TOOLS.example.md`)
+- Skill manifest, task, workflow, permission schemas
+- Capability groups definition
+- Python/Node.js runtime skeletons
 
-### Changed / 变更
-- Refined public-release documentation
-- Replaced repository-local tooling notes with a safer template-based approach
-
-## [1.0.0] - 2026-04-02
+## [v0.1.0-alpha] - 2026-04-02
 
 ### Added / 新增
-- Initial public release
-- 15 core skills
-- Complete documentation suite
+- Initial public-alpha release
+- Polyglot Core Edition architecture
+- Specs (skill-manifest, task-payload, workflow, permission)
+- Documentation (README, overview, architecture, capability-groups)
+- Python runtime MVP (core, workflow, scheduler)
+- Node.js runtime skeleton (CLI entry)
+
+### Changed / 变更
+- Specification move: spec/ → specs/
+
+---
+
+_© 2026 Clex-AI-Ultra Team. MIT License._

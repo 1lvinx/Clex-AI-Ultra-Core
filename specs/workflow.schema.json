@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Workflow",
+  "type": "object",
+  "required": ["id", "name", "steps"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {
+      "type": "object",
+      "properties": {
+        "en": {"type": "string"},
+        "zh": {"type": "string"}
+      },
+      "required": ["en", "zh"]
+    },
+    "description": {
+      "type": "object",
+      "properties": {
+        "en": {"type": "string"},
+        "zh": {"type": "string"}
+      }
+    },
+    "capabilityGroup": {"type": "string"},
+    "steps": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/Step"}
+    },
+    "inputs": {"type": "object"},
+    "outputs": {"type": "object"}
+  },
+  "definitions": {
+    "Step": {
+      "type": "object",
+      "required": ["id", "name", "skill", "action"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {
+          "type": "object",
+          "properties": {
+            "en": {"type": "string"},
+            "zh": {"type": "string"}
+          },
+          "required": ["en", "zh"]
+        },
+        "skill": {"type": "string"},
+        "action": {"type": "string"},
+        "params": {"type": "object"},
+        "dependsOn": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "runtimeTarget": {
+          "type": "string",
+          "enum": ["python", "nodejs", "go", "rust"]
+        },
+        "timeoutMs": {"type": "number", "minimum": 1000},
+        "retry": {
+          "type": "object",
+          "properties": {
+            "count": {"type": "number", "minimum": 0},
+            "delayMs": {"type": "number", "minimum": 0}
+          }
+        },
+        "onFailure": {
+          "type": "string",
+          "enum": ["continue", "stop", "retry", "fallback"]
+        },
+        "nextStep": {"type": "string"},
+        "condition": {"type": "string"}
+      }
+    }
+  }
+}
